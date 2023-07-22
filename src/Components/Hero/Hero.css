@@ -1,0 +1,16 @@
+blue-disc{
+    color: blue;
+}
+
+.blue-disc li span{
+    color: black;
+}
+button {
+    color: #fff;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 10px;
+  background: #2271E7;
+  }

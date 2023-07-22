@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt2, HiOutlineMenuAlt3 } from "react-icons/hi";
@@ -8,13 +8,31 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Header = () => {
+    const [scrolling, setScrolling] = useState(false);
     const { user } = useContext(AuthContext)
     const [navbar, setNavbar] = useState(false);
     const activeLink =
         "text-white rounded p-2 transition-colors duration-500 bg-pink-600";
+
+
+
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setScrolling(true);
+            } else {
+                setScrolling(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className="MainWidth">
-            <nav className="w-full bg-whit">
+        <div className="MainWidth relative ">
+            <nav className={`w-full bg-whit fixed MainWidth  navbar ${scrolling ? 'shadow-lg px-5 bg-[#E7F1FF]' : ''}`}>
                 <div className="justify-between mx-auto  md:items-center md:flex">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -23,16 +41,16 @@ const Header = () => {
                                 <h2 className="text-3xl font-bold">Medi<span className="text-[#2271E7] font-bold">Lab</span></h2>
                             </Link>
                             <div className="md:hidden flex items-center gap-5">
-                            <span className="w-[30px] h-[30px]  flex items-center justify-center text-center  text-white bg-[#2271E7] rounded-full">
-                                                <BiSearch className="text-2xl"></BiSearch>
-                                            </span>
+                                <span className="w-[30px] h-[30px]  flex items-center justify-center text-center  text-white bg-[#2271E7] rounded-full">
+                                    <BiSearch className="text-2xl"></BiSearch>
+                                </span>
                                 <button
                                     className="p-2 text-gray-700 rounded-md outline-none"
                                     onClick={() => setNavbar(!navbar)}
                                 >
                                     {navbar ? (
                                         <div>
-                                          
+
                                             <HiOutlineMenuAlt3 className="w-6 h-6"></HiOutlineMenuAlt3>
                                         </div>
                                     ) : (
