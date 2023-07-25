@@ -1,11 +1,13 @@
 
+import AppointmentSectionForm from '../../Components/AppointmentSectionForm/AppointmentSectionForm';
 import BannerSection from '../../Components/BannerSection/BannerSection';
 import DoctorInfo from '../../Components/DoctorInfo/DoctorInfo';
 import GetAppointmentSection from '../../Components/GetAppointmentSection/GetAppointmentSection';
 import Hero from '../../Components/Hero/Hero';
+import MeetOurSpecilist from '../../Components/MeetOurSpecilist/MeetOurSpecilist';
+import NewsletterSection from '../../Components/NewsletterSection/NewsletterSection';
 import Services from '../../Components/Service/Service';
-import SignupForm from '../../Components/SignupForm/SignupForm';
-
+ 
 const Home = () => {
     return (
         <div>
@@ -14,7 +16,9 @@ const Home = () => {
             <Hero></Hero>
             <Services></Services>
             <DoctorInfo></DoctorInfo>
-            <SignupForm></SignupForm>
+            <MeetOurSpecilist></MeetOurSpecilist>
+            <AppointmentSectionForm></AppointmentSectionForm>
+            <NewsletterSection></NewsletterSection>
 
         </div>
     );

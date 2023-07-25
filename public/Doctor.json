@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Dr. John Smith",
+        "image":"https://i.ibb.co/27wHJnc/image-6.png",
+        "position": "General Practitioner",
+        "rate": "$150"
+    },
+    {
+        "id": 2,
+        "name": "Dr. Emily Johnson",
+        "image":"https://i.ibb.co/27wHJnc/image-6.png",
+        "position": "Pediatrician",
+        "rate": "$180"
+    },
+    {
+        "id": 3,
+        "name": "Dr. Michael Lee",
+        "image":"https://i.ibb.co/27wHJnc/image-6.png",
+        "position": "Cardiologist",
+        "rate": "$250"
+    },
+    {
+        "id": 4,
+        "name": "Dr. Sarah Adams",
+        "image":"https://i.ibb.co/27wHJnc/image-6.png",
+        "position": "Dermatologist",
+        "rate": "$200"
+    }
+]
