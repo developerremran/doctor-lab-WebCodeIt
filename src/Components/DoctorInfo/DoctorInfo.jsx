@@ -1,10 +1,11 @@
+
 import SignupForm from "../SignupForm/SignupForm";
 
 
 const DoctorInfo = () => {
     return (
-        <div className="relative overflow-hidden">
-            <div className="MainWidth grid grid-cols-2 gap-[80px] items-center">
+        <div id="doctorInfo" className="relative overflow-hidden">
+            <div className="MainWidth grid grid-cols-1  md:grid-cols-2 pb-10 md:gap-[80px] items-center">
                 <div className="space-y-5">
                     <h4 className="text-[45px] w-[500px] font-semibold">
                         Find the right doctor at your fingertips
@@ -76,9 +77,9 @@ const DoctorInfo = () => {
                     </div>
 
                 </div>
-                <div>
+                <div className="pb-72 md:pb-0">
                     <div className="w-full h-full  -z-10 px-8 
-                       pt-16 pb-24 rounded-lg overflow-hidden 
+                       md:pt-16  rounded-lg overflow-hidden 
                           text-center relative">
 
                         <div className="w-full h-auto rounded-full 
@@ -93,7 +94,7 @@ const DoctorInfo = () => {
                 </div>
             </div>
 
-            <div className="absolute top-0 mt-[250px] right-0 w-full translate-x-[250px]    m-10 ">
+            <div className="absolute top-0 mt-[900px] md:mt-[250px] right-60 md:right-0 md:w-full w-5/6 translate-x-[250px]    m-10 ">
                 <SignupForm></SignupForm>
             </div>
         </div>

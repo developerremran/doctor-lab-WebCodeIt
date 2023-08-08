@@ -1,15 +1,20 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt2, HiOutlineMenuAlt3 } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import { AuthContext } from "../../AuthProvider/AuthProvider";
+
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
+
+
 
 
 
 const Header = () => {
+
     const [scrolling, setScrolling] = useState(false);
-    const { user } = useContext(AuthContext)
+
     const [navbar, setNavbar] = useState(false);
     const activeLink =
         "text-white rounded p-2 transition-colors duration-500 bg-pink-600";
@@ -29,6 +34,8 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+
 
     return (
         <div className="MainWidth relative ">
@@ -73,25 +80,61 @@ const Header = () => {
                                 <li className="text-lg text-gray-600 hover:text-blue-600">
                                     <NavLink
                                         className={({ isActive }) => (isActive ? activeLink : "")}
-                                        to="/"
+                                        to="/home"
                                     >
-                                        Home
+                                        <ScrollLink
+                                            to="home"
+                                            className="cursor-pointer"
+                                            activeClass="text-[#A362FF] font-semibold"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-100}
+                                            duration={500}
+                                        >
+                                            Home
+                                        </ScrollLink>
+
                                     </NavLink>
                                 </li>
+
+
                                 <li className="text-gray-600 hover:text-blue-600">
+
                                     <NavLink
                                         className={({ isActive }) => (isActive ? activeLink : "")}
-                                        to="/about"
+                                        to='about'
                                     >
-                                        About
+                                        <ScrollLink
+                                            to="about"
+                                            className="cursor-pointer"
+                                            activeClass="text-[#A362FF] font-semibold"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-100}
+                                            duration={500}
+                                        >
+                                            About
+                                        </ScrollLink>
+
                                     </NavLink>
                                 </li>
+
                                 <li className="text-gray-600 hover:text-blue-600">
                                     <NavLink
                                         className={({ isActive }) => (isActive ? activeLink : "")}
                                         to="/service"
                                     >
-                                        Service
+                                        <ScrollLink
+                                            to="service"
+                                            className="cursor-pointer"
+                                            activeClass="text-[#A362FF] font-semibold"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-100}
+                                            duration={500}
+                                        >
+                                            Service
+                                        </ScrollLink>
                                     </NavLink>
 
 
@@ -99,31 +142,43 @@ const Header = () => {
 
 
                                 </li>
+                                <li className="text-gray-600 hover:text-blue-600">
 
-
-                                {
-                                    user ? <li>
-                                        <NavLink className={({ isActive }) => (isActive ? activeLink : "")}
-                                            to='/'
+                                    <NavLink
+                                        className={({ isActive }) => (isActive ? activeLink : "")}
+                                        to='booking'
+                                    >
+                                        <ScrollLink
+                                            to="booking"
+                                            className="cursor-pointer"
+                                            activeClass="text-[#A362FF] font-semibold"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-100}
+                                            duration={500}
                                         >
-                                            Dashboard
-                                        </NavLink>
-                                    </li> : <li className="text-gray-600 space-y-8 hover:text-blue-600">
-                                        <NavLink
-                                            className={({ isActive }) => (isActive ? activeLink : "")}
-                                            to="/login"
-                                        >
-                                            Login
-                                        </NavLink>
+                                            Get Appointment
+                                        </ScrollLink>
 
-                                        <div className="lg:hidden md:hidden flex w-[200px]">
-                                            <a href="#_" className="inline-flex items-center justify-center w-full px-6 py-2 mb-2 text-lg text-white bg-[#2271E7] rounded-md hover:bg-green-400 sm:w-auto sm:mb-0" data-primary="green-400" data-rounded="rounded-2xl" data-primary-reset="{}">
-                                                Contact us
-                                                <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                                            </a>
-                                        </div>
-                                    </li>
-                                }
+                                    </NavLink>
+                                </li>
+
+                                <li className="text-gray-600 space-x-5 space-y-8 hover:text-blue-600">
+                                    <NavLink
+                                        className={({ isActive }) => (isActive ? activeLink : "")}
+                                        to="/login"
+                                    >
+                                        Login
+                                    </NavLink>
+                                    <NavLink
+                                        className={({ isActive }) => (isActive ? activeLink : "")}
+                                        to="/register"
+                                    >
+                                        Register
+                                    </NavLink>
+                                </li>
+
+
                             </ul>
                         </div>
                     </div>

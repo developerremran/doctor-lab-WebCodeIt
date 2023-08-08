@@ -1,9 +1,10 @@
+
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 
 const Services = () => {
     return (
-        <div className="MainWidth">
+        <div id="service" className="MainWidth">
             <div className="my-28">
             <h2 className="text-center text-4xl font-bold leading-10">
                 We Provide You The Best     <p className="pt-5"> Medical Services</p>

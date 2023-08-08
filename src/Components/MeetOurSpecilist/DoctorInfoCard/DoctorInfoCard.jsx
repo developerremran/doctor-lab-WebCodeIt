@@ -1,11 +1,9 @@
-
-
 const DoctorInfoCard = ({ doctorItem }) => {
     const { name, image, rate, position } = doctorItem;
 
     return (
         <div className="my-5">
-            <div className=" max-w-sm rounded overflow-hidden"
+            <div className=" rounded overflow-hidden"
                 style={{ boxShadow: ' 1px 3px 80px 0px rgba(0, 0, 0, 0.22)' }}>
                 <img className="w-full max-h-[400px]" src={image} alt="Sunset in the mountains" />
                 <div className="px-6 py-4">
